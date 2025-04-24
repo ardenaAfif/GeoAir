@@ -1,0 +1,216 @@
+kotlin version: 2.0.21
+error message: org.jetbrains.kotlin.backend.common.BackendException: Backend Internal error: Exception during IR lowering
+File being compiled: /Volumes/Dataku/02. Android Project/GeoAir/app/src/main/java/id/iot/geoair/custom/SemiCircleProgressBar.kt
+The root cause java.lang.RuntimeException was thrown at: org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:47)
+	at org.jetbrains.kotlin.backend.common.CodegenUtil.reportBackendException(CodegenUtil.kt:253)
+	at org.jetbrains.kotlin.backend.common.CodegenUtil.reportBackendException$default(CodegenUtil.kt:236)
+	at org.jetbrains.kotlin.backend.common.phaser.PerformByIrFilePhase.invokeSequential(performByIrFile.kt:65)
+	at org.jetbrains.kotlin.backend.common.phaser.PerformByIrFilePhase.invoke(performByIrFile.kt:52)
+	at org.jetbrains.kotlin.backend.common.phaser.PerformByIrFilePhase.invoke(performByIrFile.kt:38)
+	at org.jetbrains.kotlin.backend.common.phaser.NamedCompilerPhase.phaseBody(CompilerPhase.kt:166)
+	at org.jetbrains.kotlin.backend.common.phaser.AbstractNamedCompilerPhase.invoke(CompilerPhase.kt:113)
+	at org.jetbrains.kotlin.backend.common.phaser.CompositePhase.invoke(PhaseBuilders.kt:27)
+	at org.jetbrains.kotlin.backend.common.phaser.CompositePhase.invoke(PhaseBuilders.kt:14)
+	at org.jetbrains.kotlin.backend.common.phaser.NamedCompilerPhase.phaseBody(CompilerPhase.kt:166)
+	at org.jetbrains.kotlin.backend.common.phaser.AbstractNamedCompilerPhase.invoke(CompilerPhase.kt:113)
+	at org.jetbrains.kotlin.backend.common.phaser.CompilerPhaseKt.invokeToplevel(CompilerPhase.kt:62)
+	at org.jetbrains.kotlin.backend.jvm.JvmIrCodegenFactory.invokeCodegen(JvmIrCodegenFactory.kt:371)
+	at org.jetbrains.kotlin.codegen.CodegenFactory.generateModule(CodegenFactory.kt:47)
+	at org.jetbrains.kotlin.backend.jvm.JvmIrCodegenFactory.generateModuleInFrontendIRMode(JvmIrCodegenFactory.kt:433)
+	at org.jetbrains.kotlin.cli.jvm.compiler.pipeline.JvmCompilerPipelineKt.generateCodeFromIr(jvmCompilerPipeline.kt:246)
+	at org.jetbrains.kotlin.cli.jvm.compiler.pipeline.JvmCompilerPipelineKt.compileModulesUsingFrontendIrAndLightTree(jvmCompilerPipeline.kt:142)
+	at org.jetbrains.kotlin.cli.jvm.K2JVMCompiler.doExecute(K2JVMCompiler.kt:148)
+	at org.jetbrains.kotlin.cli.jvm.K2JVMCompiler.doExecute(K2JVMCompiler.kt:43)
+	at org.jetbrains.kotlin.cli.common.CLICompiler.execImpl(CLICompiler.kt:103)
+	at org.jetbrains.kotlin.cli.common.CLICompiler.execImpl(CLICompiler.kt:49)
+	at org.jetbrains.kotlin.cli.common.CLITool.exec(CLITool.kt:101)
+	at org.jetbrains.kotlin.incremental.IncrementalJvmCompilerRunner.runCompiler(IncrementalJvmCompilerRunner.kt:464)
+	at org.jetbrains.kotlin.incremental.IncrementalJvmCompilerRunner.runCompiler(IncrementalJvmCompilerRunner.kt:73)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.doCompile(IncrementalCompilerRunner.kt:506)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.compileImpl(IncrementalCompilerRunner.kt:423)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.tryCompileIncrementally$lambda$9$compile(IncrementalCompilerRunner.kt:249)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.tryCompileIncrementally(IncrementalCompilerRunner.kt:267)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.compile(IncrementalCompilerRunner.kt:120)
+	at org.jetbrains.kotlin.daemon.CompileServiceImplBase.execIncrementalCompiler(CompileServiceImpl.kt:675)
+	at org.jetbrains.kotlin.daemon.CompileServiceImplBase.access$execIncrementalCompiler(CompileServiceImpl.kt:92)
+	at org.jetbrains.kotlin.daemon.CompileServiceImpl.compile(CompileServiceImpl.kt:1660)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(Unknown Source)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Unknown Source)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.RuntimeException: Exception while generating code for:
+CONSTRUCTOR visibility:public <> (context:android.content.Context, attrs:android.util.AttributeSet?, defStyle:kotlin.Int) returnType:id.iot.geoair.custom.SemiCircleProgressBar [primary]
+  annotations:
+    JvmOverloads
+  VALUE_PARAMETER name:context index:0 type:android.content.Context
+  VALUE_PARAMETER name:attrs index:1 type:android.util.AttributeSet?
+    EXPRESSION_BODY
+      ERROR_EXPR 'Default Stub' type=android.util.AttributeSet?
+  VALUE_PARAMETER name:defStyle index:2 type:kotlin.Int
+    EXPRESSION_BODY
+      ERROR_EXPR 'Default Stub' type=kotlin.Int
+  BLOCK_BODY
+    DELEGATING_CONSTRUCTOR_CALL 'public constructor <init> (p0: @[FlexibleNullability] android.content.Context?, p1: @[EnhancedNullability] android.util.AttributeSet?, p2: kotlin.Int) declared in android.view.View'
+      p0: GET_VAR 'context: android.content.Context declared in id.iot.geoair.custom.SemiCircleProgressBar.<init>' type=android.content.Context origin=null
+      p1: GET_VAR 'attrs: android.util.AttributeSet? declared in id.iot.geoair.custom.SemiCircleProgressBar.<init>' type=android.util.AttributeSet? origin=null
+      p2: GET_VAR 'defStyle: kotlin.Int declared in id.iot.geoair.custom.SemiCircleProgressBar.<init>' type=kotlin.Int origin=null
+    BLOCK type=kotlin.Unit origin=null
+      SET_FIELD 'FIELD PROPERTY_BACKING_FIELD name:aqi type:kotlin.Int? visibility:private' type=kotlin.Unit origin=INITIALIZE_FIELD
+        receiver: GET_VAR '<this>: id.iot.geoair.custom.SemiCircleProgressBar declared in id.iot.geoair.custom.SemiCircleProgressBar' type=id.iot.geoair.custom.SemiCircleProgressBar origin=null
+        value: CONST Null type=kotlin.Nothing? value=null
+      SET_FIELD 'FIELD PROPERTY_BACKING_FIELD name:statusText type:kotlin.String visibility:private' type=kotlin.Unit origin=INITIALIZE_FIELD
+        receiver: GET_VAR '<this>: id.iot.geoair.custom.SemiCircleProgressBar declared in id.iot.geoair.custom.SemiCircleProgressBar' type=id.iot.geoair.custom.SemiCircleProgressBar origin=null
+        value: CONST String type=kotlin.String value="Low"
+      SET_FIELD 'FIELD PROPERTY_BACKING_FIELD name:statusColor type:kotlin.Int visibility:private' type=kotlin.Unit origin=INITIALIZE_FIELD
+        receiver: GET_VAR '<this>: id.iot.geoair.custom.SemiCircleProgressBar declared in id.iot.geoair.custom.SemiCircleProgressBar' type=id.iot.geoair.custom.SemiCircleProgressBar origin=null
+        value: CALL 'public final fun getColor (p0: kotlin.Int): kotlin.Int declared in android.content.Context' type=kotlin.Int origin=null
+          $this: GET_VAR 'context: android.content.Context declared in id.iot.geoair.custom.SemiCircleProgressBar.<init>' type=android.content.Context origin=null
+          p0: GET_FIELD 'FIELD IR_EXTERNAL_JAVA_DECLARATION_STUB name:green_dark type:kotlin.Int visibility:public [static] declared in id.iot.geoair.R.color' type=kotlin.Int superQualifierSymbol=id.iot.geoair.R.color origin=null
+      SET_FIELD 'FIELD PROPERTY_BACKING_FIELD name:emoji type:kotlin.String visibility:private' type=kotlin.Unit origin=INITIALIZE_FIELD
+        receiver: GET_VAR '<this>: id.iot.geoair.custom.SemiCircleProgressBar declared in id.iot.geoair.custom.SemiCircleProgressBar' type=id.iot.geoair.custom.SemiCircleProgressBar origin=null
+        value: CONST String type=kotlin.String value="\uD83D\uDE0A"
+      SET_FIELD 'FIELD PROPERTY_BACKING_FIELD name:textPaint type:android.graphics.Paint visibility:private [final]' type=kotlin.Unit origin=INITIALIZE_FIELD
+        receiver: GET_VAR '<this>: id.iot.geoair.custom.SemiCircleProgressBar declared in id.iot.geoair.custom.SemiCircleProgressBar' type=id.iot.geoair.custom.SemiCircleProgressBar origin=null
+        value: CALL 'public final fun apply <T> (block: @[ExtensionFunctionType] kotlin.Function1<T of kotlin.StandardKt.apply, kotlin.Unit>): T of kotlin.StandardKt.apply [inline] declared in kotlin.StandardKt' type=android.graphics.Paint origin=null
+          <T>: android.graphics.Paint
+          $receiver: CONSTRUCTOR_CALL 'public constructor <init> (p0: kotlin.Int) declared in android.graphics.Paint' type=android.graphics.Paint origin=null
+            p0: CONST Int type=kotlin.Int value=1
+          block: BLOCK type=@[ExtensionFunctionType] kotlin.Function1<android.graphics.Paint, kotlin.Unit> origin=LAMBDA
+            COMPOSITE type=kotlin.Unit origin=null
+            FUNCTION_REFERENCE 'private final fun textPaint$lambda$0 (): kotlin.Unit declared in id.iot.geoair.custom.SemiCircleProgressBar' type=@[ExtensionFunctionType] kotlin.Function1<android.graphics.Paint, kotlin.Unit> origin=INLINE_LAMBDA reflectionTarget=null
+      SET_FIELD 'FIELD PROPERTY_BACKING_FIELD name:smallTextPaint type:android.graphics.Paint visibility:private [final]' type=kotlin.Unit origin=INITIALIZE_FIELD
+        receiver: GET_VAR '<this>: id.iot.geoair.custom.SemiCircleProgressBar declared in id.iot.geoair.custom.SemiCircleProgressBar' type=id.iot.geoair.custom.SemiCircleProgressBar origin=null
+        value: CALL 'public final fun apply <T> (block: @[ExtensionFunctionType] kotlin.Function1<T of kotlin.StandardKt.apply, kotlin.Unit>): T of kotlin.StandardKt.apply [inline] declared in kotlin.StandardKt' type=android.graphics.Paint origin=null
+          <T>: android.graphics.Paint
+          $receiver: CONSTRUCTOR_CALL 'public constructor <init> (p0: kotlin.Int) declared in android.graphics.Paint' type=android.graphics.Paint origin=null
+            p0: CONST Int type=kotlin.Int value=1
+          block: BLOCK type=@[ExtensionFunctionType] kotlin.Function1<android.graphics.Paint, kotlin.Unit> origin=LAMBDA
+            COMPOSITE type=kotlin.Unit origin=null
+            FUNCTION_REFERENCE 'private final fun smallTextPaint$lambda$1 (): kotlin.Unit declared in id.iot.geoair.custom.SemiCircleProgressBar' type=@[ExtensionFunctionType] kotlin.Function1<android.graphics.Paint, kotlin.Unit> origin=INLINE_LAMBDA reflectionTarget=null
+      SET_FIELD 'FIELD PROPERTY_BACKING_FIELD name:statusBackgroundPaint type:android.graphics.Paint visibility:private [final]' type=kotlin.Unit origin=INITIALIZE_FIELD
+        receiver: GET_VAR '<this>: id.iot.geoair.custom.SemiCircleProgressBar declared in id.iot.geoair.custom.SemiCircleProgressBar' type=id.iot.geoair.custom.SemiCircleProgressBar origin=null
+        value: CALL 'public final fun apply <T> (block: @[ExtensionFunctionType] kotlin.Function1<T of kotlin.StandardKt.apply, kotlin.Unit>): T of kotlin.StandardKt.apply [inline] declared in kotlin.StandardKt' type=android.graphics.Paint origin=null
+          <T>: android.graphics.Paint
+          $receiver: CONSTRUCTOR_CALL 'public constructor <init> (p0: kotlin.Int) declared in android.graphics.Paint' type=android.graphics.Paint origin=null
+            p0: CONST Int type=kotlin.Int value=1
+          block: BLOCK type=@[ExtensionFunctionType] kotlin.Function1<android.graphics.Paint, kotlin.Unit> origin=LAMBDA
+            COMPOSITE type=kotlin.Unit origin=null
+            FUNCTION_REFERENCE 'private final fun statusBackgroundPaint$lambda$2 (): kotlin.Unit declared in id.iot.geoair.custom.SemiCircleProgressBar' type=@[ExtensionFunctionType] kotlin.Function1<android.graphics.Paint, kotlin.Unit> origin=INLINE_LAMBDA reflectionTarget=null
+      SET_FIELD 'FIELD PROPERTY_BACKING_FIELD name:strokeWidth type:kotlin.Float visibility:private [final]' type=kotlin.Unit origin=INITIALIZE_FIELD
+        receiver: GET_VAR '<this>: id.iot.geoair.custom.SemiCircleProgressBar declared in id.iot.geoair.custom.SemiCircleProgressBar' type=id.iot.geoair.custom.SemiCircleProgressBar origin=null
+        value: CONST Float type=kotlin.Float value=40.0
+      SET_FIELD 'FIELD PROPERTY_BACKING_FIELD name:backgroundPaint type:android.graphics.Paint visibility:private [final]' type=kotlin.Unit origin=INITIALIZE_FIELD
+        receiver: GET_VAR '<this>: id.iot.geoair.custom.SemiCircleProgressBar declared in id.iot.geoair.custom.SemiCircleProgressBar' type=id.iot.geoair.custom.SemiCircleProgressBar origin=null
+        value: CALL 'public final fun apply <T> (block: @[ExtensionFunctionType] kotlin.Function1<T of kotlin.StandardKt.apply, kotlin.Unit>): T of kotlin.StandardKt.apply [inline] declared in kotlin.StandardKt' type=android.graphics.Paint origin=null
+          <T>: android.graphics.Paint
+          $receiver: CONSTRUCTOR_CALL 'public constructor <init> (p0: kotlin.Int) declared in android.graphics.Paint' type=android.graphics.Paint origin=null
+            p0: CONST Int type=kotlin.Int value=1
+          block: BLOCK type=@[ExtensionFunctionType] kotlin.Function1<android.graphics.Paint, kotlin.Unit> origin=LAMBDA
+            COMPOSITE type=kotlin.Unit origin=null
+            FUNCTION_REFERENCE 'private final fun backgroundPaint$lambda$3 ($context: android.content.Context, this$0: id.iot.geoair.custom.SemiCircleProgressBar): kotlin.Unit declared in id.iot.geoair.custom.SemiCircleProgressBar' type=@[ExtensionFunctionType] kotlin.Function1<android.graphics.Paint, kotlin.Unit> origin=INLINE_LAMBDA reflectionTarget=null
+              $context: GET_VAR 'context: android.content.Context declared in id.iot.geoair.custom.SemiCircleProgressBar.<init>' type=android.content.Context origin=null
+              this$0: GET_VAR '<this>: id.iot.geoair.custom.SemiCircleProgressBar declared in id.iot.geoair.custom.SemiCircleProgressBar' type=id.iot.geoair.custom.SemiCircleProgressBar origin=null
+      SET_FIELD 'FIELD PROPERTY_BACKING_FIELD name:progressPaint type:android.graphics.Paint visibility:private [final]' type=kotlin.Unit origin=INITIALIZE_FIELD
+        receiver: GET_VAR '<this>: id.iot.geoair.custom.SemiCircleProgressBar declared in id.iot.geoair.custom.SemiCircleProgressBar' type=id.iot.geoair.custom.SemiCircleProgressBar origin=null
+        value: CALL 'public final fun apply <T> (block: @[ExtensionFunctionType] kotlin.Function1<T of kotlin.StandardKt.apply, kotlin.Unit>): T of kotlin.StandardKt.apply [inline] declared in kotlin.StandardKt' type=android.graphics.Paint origin=null
+          <T>: android.graphics.Paint
+          $receiver: CONSTRUCTOR_CALL 'public constructor <init> (p0: kotlin.Int) declared in android.graphics.Paint' type=android.graphics.Paint origin=null
+            p0: CONST Int type=kotlin.Int value=1
+          block: BLOCK type=@[ExtensionFunctionType] kotlin.Function1<android.graphics.Paint, kotlin.Unit> origin=LAMBDA
+            COMPOSITE type=kotlin.Unit origin=null
+            FUNCTION_REFERENCE 'private final fun progressPaint$lambda$4 ($context: android.content.Context, this$0: id.iot.geoair.custom.SemiCircleProgressBar): kotlin.Unit declared in id.iot.geoair.custom.SemiCircleProgressBar' type=@[ExtensionFunctionType] kotlin.Function1<android.graphics.Paint, kotlin.Unit> origin=INLINE_LAMBDA reflectionTarget=null
+              $context: GET_VAR 'context: android.content.Context declared in id.iot.geoair.custom.SemiCircleProgressBar.<init>' type=android.content.Context origin=null
+              this$0: GET_VAR '<this>: id.iot.geoair.custom.SemiCircleProgressBar declared in id.iot.geoair.custom.SemiCircleProgressBar' type=id.iot.geoair.custom.SemiCircleProgressBar origin=null
+      SET_FIELD 'FIELD PROPERTY_BACKING_FIELD name:progress type:kotlin.Float visibility:private' type=kotlin.Unit origin=INITIALIZE_FIELD
+        receiver: GET_VAR '<this>: id.iot.geoair.custom.SemiCircleProgressBar declared in id.iot.geoair.custom.SemiCircleProgressBar' type=id.iot.geoair.custom.SemiCircleProgressBar origin=null
+        value: CONST Float type=kotlin.Float value=0.0
+
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:47)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate$default(FunctionCodegen.kt:40)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ClassCodegen.generateMethodNode(ClassCodegen.kt:406)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ClassCodegen.generateMethod(ClassCodegen.kt:423)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ClassCodegen.generate(ClassCodegen.kt:168)
+	at org.jetbrains.kotlin.backend.jvm.FileCodegen.lower(JvmPhases.kt:39)
+	at org.jetbrains.kotlin.backend.common.phaser.PhaseFactoriesKt.createFilePhase$lambda$4(PhaseFactories.kt:71)
+	at org.jetbrains.kotlin.backend.common.phaser.PhaseBuildersKt$createSimpleNamedCompilerPhase$1.phaseBody(PhaseBuilders.kt:69)
+	at org.jetbrains.kotlin.backend.common.phaser.SimpleNamedCompilerPhase.phaseBody(CompilerPhase.kt:226)
+	at org.jetbrains.kotlin.backend.common.phaser.AbstractNamedCompilerPhase.invoke(CompilerPhase.kt:113)
+	at org.jetbrains.kotlin.backend.common.phaser.PerformByIrFilePhase.invokeSequential(performByIrFile.kt:62)
+	... 44 more
+Caused by: java.lang.RuntimeException: Exception while generating code for:
+FUN INLINE_LAMBDA name:smallTextPaint$lambda$1 visibility:private modality:FINAL <> ($receiver:android.graphics.Paint) returnType:kotlin.Unit
+  $receiver: VALUE_PARAMETER name:$this$apply type:android.graphics.Paint
+  BLOCK_BODY
+    VAR name:$i$a$-apply-SemiCircleProgressBar$smallTextPaint$1 type:kotlin.Int [val]
+      CONST Int type=kotlin.Int value=0
+    CALL 'public open fun setColor (p0: kotlin.Int): kotlin.Unit declared in android.graphics.Paint' type=kotlin.Unit origin=EQ
+      $this: GET_VAR '$this$apply: android.graphics.Paint declared in id.iot.geoair.custom.SemiCircleProgressBar.smallTextPaint$lambda$1' type=android.graphics.Paint origin=null
+      p0: CONST Int type=kotlin.Int value=-16777216
+    CALL 'public open fun setTextSize (p0: kotlin.Float): kotlin.Unit declared in android.graphics.Paint' type=kotlin.Unit origin=EQ
+      $this: GET_VAR '$this$apply: android.graphics.Paint declared in id.iot.geoair.custom.SemiCircleProgressBar.smallTextPaint$lambda$1' type=android.graphics.Paint origin=null
+      p0: CONST Float type=kotlin.Float value=40.0
+    CALL 'public open fun setTextAlign (p0: @[FlexibleNullability] android.graphics.Paint.Align?): kotlin.Unit declared in android.graphics.Paint' type=kotlin.Unit origin=EQ
+      $this: GET_VAR '$this$apply: android.graphics.Paint declared in id.iot.geoair.custom.SemiCircleProgressBar.smallTextPaint$lambda$1' type=android.graphics.Paint origin=null
+      p0: GET_FIELD 'FIELD FIELD_FOR_ENUM_ENTRY name:CENTER type:android.graphics.Paint.Align visibility:public [final,static] declared in android.graphics.Paint.Align' type=android.graphics.Paint.Align origin=null
+    SET_FIELD 'FIELD IR_EXTERNAL_JAVA_DECLARATION_STUB name:BOLD_ITALIC type:kotlin.Int visibility:public [final,static] declared in android.graphics.Typeface' type=kotlin.Unit superQualifierSymbol=android.graphics.Typeface origin=EQ
+      value: CONST Int type=kotlin.Int value=3
+
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:47)
+	at org.jetbrains.kotlin.backend.jvm.codegen.IrSourceCompilerForInline.generateLambdaBody(IrSourceCompilerForInline.kt:67)
+	at org.jetbrains.kotlin.codegen.inline.ExpressionLambda.generateLambdaBody(LambdaInfo.kt:72)
+	at org.jetbrains.kotlin.backend.jvm.codegen.IrInlineCodegen.genValueAndPut(IrInlineCodegen.kt:100)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall$handleParameter(ExpressionCodegen.kt:616)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall(ExpressionCodegen.kt:644)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.expressions.IrCall.accept(IrCall.kt:24)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitFieldAccess(ExpressionCodegen.kt:878)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitFieldAccess(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.visitors.IrElementVisitor$DefaultImpls.visitSetField(IrElementVisitor.kt:206)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitSetField(ExpressionCodegen.kt:908)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitSetField(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.expressions.IrSetField.accept(IrSetField.kt:21)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitStatementContainer(ExpressionCodegen.kt:579)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitContainerExpression(ExpressionCodegen.kt:593)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitContainerExpression(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.visitors.IrElementVisitor$DefaultImpls.visitBlock(IrElementVisitor.kt:122)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlock(ExpressionCodegen.kt:413)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlock(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.expressions.IrBlock.accept(IrBlock.kt:18)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitStatementContainer(ExpressionCodegen.kt:579)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlockBody(ExpressionCodegen.kt:584)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlockBody(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.expressions.IrBlockBody.accept(IrBlockBody.kt:20)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.generate(ExpressionCodegen.kt:240)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.doGenerate(FunctionCodegen.kt:123)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:44)
+	... 54 more
+Caused by: java.lang.AssertionError: access of const val: SET_FIELD 'FIELD IR_EXTERNAL_JAVA_DECLARATION_STUB name:BOLD_ITALIC type:kotlin.Int visibility:public [final,static] declared in android.graphics.Typeface' type=kotlin.Unit superQualifierSymbol=android.graphics.Typeface origin=EQ
+  value: CONST Int type=kotlin.Int value=3
+
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitFieldAccess(ExpressionCodegen.kt:861)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitFieldAccess(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.visitors.IrElementVisitor$DefaultImpls.visitSetField(IrElementVisitor.kt:206)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitSetField(ExpressionCodegen.kt:908)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitSetField(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.expressions.IrSetField.accept(IrSetField.kt:21)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitStatementContainer(ExpressionCodegen.kt:579)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlockBody(ExpressionCodegen.kt:584)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlockBody(ExpressionCodegen.kt:138)
+	at org.jetbrains.kotlin.ir.expressions.IrBlockBody.accept(IrBlockBody.kt:20)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.generate(ExpressionCodegen.kt:240)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.doGenerate(FunctionCodegen.kt:123)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:44)
+	... 81 more
+
+

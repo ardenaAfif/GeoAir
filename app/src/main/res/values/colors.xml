@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="green_dark">#00BD0F</color> <!-- Primary | Low -->
+    <color name="green_light">#D3FFBD</color> <!-- Bg Progress Bar -->
+    <color name="gray_100">#E6E5E5</color>
+    <color name="gray_light">#BDBDBD</color>
+    <color name="gray_medium">#757575</color>
+    <color name="blue_light">#64B5F6</color>
+    <color name="blue_dark">#1E88E5</color>
+    <color name="yellow">#FADF29</color> <!-- Normal -->
+    <color name="orange">#FF9800</color> <!-- Medium -->
+    <color name="red">#F44336</color> <!-- High -->
+</resources>
