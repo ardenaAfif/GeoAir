@@ -1,7 +1,5 @@
-package id.iot.geoair.data.remote
+package id.iot.geoair.data.api
 
-import id.iot.geoair.data.model.SensorValueResponse
-import okhttp3.ResponseBody
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -30,11 +28,23 @@ interface ApiService {
     suspend fun getSensorKelembapan(
         @Query("token") token: String,
         @Query("V4") kelembapan: String = ""
-    ): Response<Int>
+    ): Response<Double>
 
     @GET("external/api/get")
     suspend fun getSensorSuhu(
         @Query("token") token: String,
         @Query("V5") suhu: String = ""
-    ): Response<Int>
+    ): Response<Double>
+
+    @GET("external/api/get")
+    suspend fun getSensorLat(
+        @Query("token") token: String,
+        @Query("V6") suhu: String = ""
+    ): Response<Double>
+
+    @GET("external/api/get")
+    suspend fun getSensorLong(
+        @Query("token") token: String,
+        @Query("V7") suhu: String = ""
+    ): Response<Double>
 }

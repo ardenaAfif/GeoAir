@@ -4,6 +4,7 @@ plugins {
     id("kotlin-parcelize")
     kotlin("kapt")
     id("com.google.dagger.hilt.android")
+    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
@@ -59,10 +60,14 @@ dependencies {
 
 
     // Chart
-    implementation("com.github.AAChartModel:AAChartCore-Kotlin:-SNAPSHOT")
+    implementation ("com.github.AAChartModel:AAChartCore:-SNAPSHOT")
+
+    // Maps
+    implementation("com.google.android.gms:play-services-maps:19.2.0")
 
     // Dagger Hilt
     implementation(libs.hilt.android)
+    implementation(libs.firebase.database)
     kapt(libs.hilt.compiler)
 
     implementation(libs.androidx.core.ktx)

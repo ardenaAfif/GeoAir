@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import id.iot.geoair.data.remote.ApiService
+import id.iot.geoair.data.api.ApiService
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -23,11 +23,17 @@ class HomeViewModel @Inject constructor(
     private val _co = MutableLiveData<Int?>()
     val co: MutableLiveData<Int?> get() = _co
 
-    private val _kelembapan = MutableLiveData<Int?>()
-    val kelembapan: MutableLiveData<Int?> get() = _kelembapan
+    private val _kelembapan = MutableLiveData<Double?>()
+    val kelembapan: MutableLiveData<Double?> get() = _kelembapan
 
-    private val _suhu = MutableLiveData<Int?>()
-    val suhu: MutableLiveData<Int?> get() = _suhu
+    private val _suhu = MutableLiveData<Double?>()
+    val suhu: MutableLiveData<Double?> get() = _suhu
+
+    private val _latitude = MutableLiveData<Double?>()
+    val latitude: MutableLiveData<Double?> get() = _latitude
+
+    private val _longitude = MutableLiveData<Double?>()
+    val longitude: MutableLiveData<Double?> get() = _longitude
 
     fun getSensorDebu(token: String) {
         viewModelScope.launch {
@@ -96,4 +102,34 @@ class HomeViewModel @Inject constructor(
             }
         }
     }
+
+    fun getSensorLat(token: String) {
+        viewModelScope.launch {
+            val response = apiService.getSensorLat(token = token)
+            if (response.isSuccessful) {
+                _latitude.value = response.body()
+            } else {
+                // Handle error
+                Log.e(
+                    "API Error",
+                    "Failed to get sensor latitude: ${response.errorBody()?.string()}"
+                )
+                _latitude.value = null
+            }
+        }
+    }
+
+    fun getSensorLong(token: String) {
+        viewModelScope.launch {
+            val response = apiService.getSensorLong(token = token)
+            if (response.isSuccessful) {
+                _longitude.value = response.body()
+                Log.d("API Success", "Sensor longitude: ${response.body()}")
+            } else {
+                Log.e("API ERROR", "Failed to get sensor longitude: ${response.errorBody()?.string()}")
+                _longitude.value = null
+            }
+        }
+    }
+
 }

@@ -205,6 +205,25 @@
             app:layout_constraintEnd_toEndOf="parent"/>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/card_maps"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginVertical="12dp"
+            android:visibility="visible"
+            app:cardCornerRadius="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_humidity">
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/map_fragment"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
             android:id="@+id/card_humidity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -314,7 +333,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/card_humidity">
+            app:layout_constraintTop_toBottomOf="@id/card_maps">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -322,13 +341,12 @@
                 android:padding="12dp"
                 android:orientation="vertical">
 
-
-                <com.github.aachartmodel.aainfographics.aachartcreator.AAChartView
+                <com.github.AAChartModel.AAChartCore.AAChartCreator.AAChartView
                     android:id="@+id/chart_forecast"
                     android:layout_width="match_parent"
                     android:layout_height="300dp">
 
-                </com.github.aachartmodel.aainfographics.aachartcreator.AAChartView>
+                </com.github.AAChartModel.AAChartCore.AAChartCreator.AAChartView>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 

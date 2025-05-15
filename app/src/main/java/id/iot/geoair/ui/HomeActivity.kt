@@ -1,37 +1,37 @@
 package id.iot.geoair.ui
 
 import android.annotation.SuppressLint
-import android.app.AlertDialog
 import android.app.Dialog
 import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.lifecycle.lifecycleScope
-import com.github.aachartmodel.aainfographics.aachartcreator.AAChartModel
-import com.github.aachartmodel.aainfographics.aachartcreator.AAChartType
-import com.github.aachartmodel.aainfographics.aachartcreator.AASeriesElement
+import androidx.core.graphics.drawable.toDrawable
+import com.github.AAChartModel.AAChartCore.AAChartCreator.AAChartModel
+import com.github.AAChartModel.AAChartCore.AAChartCreator.AASeriesElement
+import com.github.AAChartModel.AAChartCore.AAChartEnum.AAChartType
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 import dagger.hilt.android.AndroidEntryPoint
 import id.iot.geoair.R
 import id.iot.geoair.databinding.ActivityHomeBinding
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
-import androidx.core.graphics.drawable.toDrawable
 import java.util.Calendar
 import kotlin.math.abs
 
 @SuppressLint("SetTextI18n")
 @AndroidEntryPoint
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var binding: ActivityHomeBinding
 
@@ -40,6 +40,8 @@ class HomeActivity : AppCompatActivity() {
     private val handler = Handler(Looper.getMainLooper())
     private val refreshInterval = 1000L // 1 detik
     private val token = "zBOrTJZFZAXNKH5beRH1Di_oRQrwFujP"
+
+    private lateinit var googleMap: GoogleMap
 
     private val baseHourlyAqi = MutableList(24) { 0 } // Default awal, nanti diisi saat pertama kali dapat debu
     private var lastAqiValue = -1
@@ -50,9 +52,33 @@ class HomeActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
+        mapSetup()
         observeSensorData()
 
         handler.post(refreshSensorRunnable)
+    }
+
+    private fun mapSetup() {
+       val mapFragment = supportFragmentManager.findFragmentById(R.id.map_fragment) as SupportMapFragment
+        mapFragment.getMapAsync(this)
+    }
+
+    override fun onMapReady(map: GoogleMap) {
+        googleMap = map
+
+        viewModel.latitude.observe(this) { latitude ->
+            val lat = latitude
+            val lng = viewModel.longitude.value
+
+            if (lat != null && lng != null) {
+                val location = LatLng(lat, lng)
+                googleMap.clear()
+                googleMap.addMarker(MarkerOptions().position(location).title("Lokasi Sensor"))
+                googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 15f))
+                Log.d(">> Location", "$lat, $lng")
+            }
+        }
+
     }
 
     private fun getDebuProgress(debu: Int): Float {
@@ -230,6 +256,8 @@ class HomeActivity : AppCompatActivity() {
             viewModel.getSensorKelembapan(token)
             viewModel.getSensorCo2(token)
             viewModel.getSensorCo(token)
+            viewModel.getSensorLat(token)
+            viewModel.getSensorLong(token)
             handler.postDelayed(this, refreshInterval)
         }
     }
@@ -238,5 +266,4 @@ class HomeActivity : AppCompatActivity() {
         super.onDestroy()
         handler.removeCallbacks(refreshSensorRunnable)
     }
-
 }

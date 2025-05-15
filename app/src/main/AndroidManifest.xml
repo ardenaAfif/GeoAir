@@ -27,6 +27,10 @@
         <activity
             android:name=".ui.HomeActivity"
             android:exported="false"/>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyD7pJzLmDuZZQuNjoUnkPnIRJGznW05XrE" />
     </application>
 
 </manifest>

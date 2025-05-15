@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "619577026190",
+    "firebase_url": "https://geo-air-quality-9a63e-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "geo-air-quality-9a63e",
+    "storage_bucket": "geo-air-quality-9a63e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:619577026190:android:1d46ddba79ce74305f0bdf",
+        "android_client_info": {
+          "package_name": "id.iot.geoair"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANVZFO_wVAmwIuDiB8EQ7Q6zjl20qo5vs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

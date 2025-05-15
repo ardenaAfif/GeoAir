@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="id.iot.geoair" />
+                  <option name="mobileSdkAppId" value="1:619577026190:android:1d46ddba79ce74305f0bdf" />
+                  <option name="projectId" value="geo-air-quality-9a63e" />
+                  <option name="projectNumber" value="619577026190" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

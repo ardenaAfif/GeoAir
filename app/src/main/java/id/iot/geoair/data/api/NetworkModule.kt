@@ -1,4 +1,4 @@
-package id.iot.geoair.data.remote
+package id.iot.geoair.data.api
 
 import dagger.Module
 import dagger.Provides
